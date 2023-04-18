@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>首页</title>
+</head>
+<body>
+    <header id="header">
+        <div class="logo"><h1><img class="logo-img" src="/static/img/logo.png"/> MyChat</h1></div>
+    </header>
+    <aside id="aside">
+        <div class="chat-aside">
+            <a id="index" th:href="@{/}">首页</a>
+            <div class="chat-list" th:each="chat:${chats}">
+                <a id="theme" th:href="@{/message/show/}+${chat.getId()}">[[${chat.getTheme()}]]</a>
+                <a id="delete" th:href="@{/chat/delete/}+${chat.getId()}">删除会话</a>
+            </div>
+            <a id="create" th:href="@{/chat/create/}+${chats.size()+1}">创建会话</a>
+        </div>
+    </aside>
+    <main id="main">
+        <div id="chatWindow" class="chat-window">
+            <p th:each="msg:${msgs}"
+               th:class="message+${msg.getFlag()}">[[${msg.getFlag()}==1?GPT-:${null}]][[${msg.getContent()}]][[${msg.getFlag()}==0?-user:${null}]]</p>
+        </div>
+    </main>
+    <footer id="footer">
+        <div class="chat-input">
+            <form action="" method="post" id="chat-from">
+                <input type="hidden" class="chat-id" name="chatId" id="chatId" th:value="${chatId}"/>
+                <input type="text" class="input-content" name="content" id="content"/>
+                <input type="button" class="sbtn" id="sm" value="提交"/>
+            </form>
+        </div>
+    </footer>
+    <script src="/static/js/typed.umd.js"></script>
+    <script src="/static/js/jQuery-3.6.4.js"></script>
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

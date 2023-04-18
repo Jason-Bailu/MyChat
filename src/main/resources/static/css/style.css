@@ -1,0 +1,253 @@
+/*全局样式*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    background-size: cover;
+    color: black;
+}
+
+/*头部样式*/
+header {
+    width: 100%;
+    height: 120px;
+    top: 0;
+    display: flex;
+    position: fixed;
+    background-image: linear-gradient(
+            -180deg,
+            #fff 100%,
+            rgba(255,255,255,0) 0%);
+    opacity: 0;
+    transition: 1s;
+    animation: slideTop 1s ease forwards;
+}
+
+.logo {
+    margin-left: 40px;
+    position: fixed;
+}
+
+h1 {
+    font-size: 40px;
+    width: 230px;
+    height: 120px;
+    line-height: 120px;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+}
+
+/*侧边会话栏样式*/
+aside {
+    width: 60px;
+    height: 240px;
+    display: flex;
+    top: 35%;
+    bottom: 35%;
+    position: fixed;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: 1s;
+    animation: slideLeft 1s ease forwards;
+}
+
+.chat-aside {
+    margin-top: 120px;
+    margin-bottom: 120px;
+    width: 50px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.chat-list {
+    width: 50px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-list a {
+    margin-left: 10px;
+    background: white;
+    width: 60px;
+    height: 20px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.chat-aside a {
+    margin-left: 10px;
+    background: white;
+    width: 60px;
+    height: 20px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#index {
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 5px;
+    color: black;
+    text-decoration: none;
+}
+
+#theme {
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 5px;
+    color: black;
+    text-decoration: none;
+}
+
+#delete {
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 5px;
+    color: red;
+    text-decoration: none;
+}
+
+#create {
+    border: 1px solid blue;
+    border-radius: 5px;
+    font-size: 5px;
+    color: blue;
+    text-decoration: none;
+}
+
+/*会话框样式*/
+main {
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+.chat-window {
+    font-size: 15px;
+    top: 120px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    overflow: auto;
+}
+
+p {
+    width: 80%;
+    border: 1px solid black;
+    border-radius: 5px;
+    line-height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+}
+
+/*输入信息样式*/
+p.message0 {
+    color: black;
+    background-color: aliceblue;
+    text-align: right;
+}
+
+/*输出信息样式*/
+p.message1 {
+    color: blue;
+    background-color: aliceblue;
+    text-align: left;
+}
+
+.type-text {
+    color: blue;
+    text-align: left;
+}
+
+/*底部样式*/
+footer {
+    width: 100%;
+    height: 120px;
+    bottom: 0;
+    display: flex;
+    position: fixed;
+    background-image: -webkit-gradient(
+            linear,left top, left bottom,
+            from(rgba(255,255,255,0))
+            ,color-stop(70%, #fff));
+    background-image: linear-gradient(
+            -180deg,
+            rgba(255,255,255,0) 0%,
+            #fff 70%);
+    opacity: 0;
+    transition: 1s;
+    animation: slideBottom 1s ease forwards;
+}
+
+.chat-input {
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.input-message {
+    font-size: 15px;
+    width: 220px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+#chat-from input[type=text]:focus {
+    outline: none;
+}
+
+.sbtn {
+    font-size: 15px;
+    width: 60px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+/*动画*/
+@keyframes slideTop {
+    0% {
+        transform: translateY(-100px);
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideBottom {
+    0% {
+        transform: translateY(100px);
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(-100px);
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
